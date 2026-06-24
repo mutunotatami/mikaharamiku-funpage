@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="400" fill="#ece3ec"/>
+    <circle cx="200" cy="180" r="92" fill="#e8d8ea"/>
+    <ellipse cx="200" cy="150" rx="58" ry="44" fill="#d8a6b4"/>
+    <rect x="150" y="150" width="100" height="96" rx="20" fill="#4a4450"/>
+    <text x="200" y="330" font-family="serif" font-size="54" fill="#7c6ca6" text-anchor="middle">みく</text>
+  </svg>
+</template>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Yomogi&family=Zen+Maru+Gothic:wght@400;500;700&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; background:#faf7fb; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    html { overflow-x:hidden; }
+    html, body { cursor:url('assets/cursor.png') 8 6, auto; }
+    a, [onclick], .mklink, .mkbtn, nav span, header, header * { cursor:url('assets/cursor.png') 8 6, pointer; }
+    * { box-sizing:border-box; }
+    p, li, dd, h1, h2, h3 { word-break:auto-phrase; line-break:strict; }
+    a { text-decoration:none; color:inherit; }
+    ::selection { background:#e3c0cc; }
+    @keyframes mkfloat1 { 0%,100%{ transform:translateY(0) rotate(-4deg);} 50%{ transform:translateY(-26px) rotate(4deg);} }
+    @keyframes mkfloat2 { 0%,100%{ transform:translateY(0) rotate(5deg);} 50%{ transform:translateY(-32px) rotate(-3deg);} }
+    @keyframes mkdrift { 0%{ transform:translate(0,0) rotate(0);} 100%{ transform:translate(60px,-40px) rotate(20deg);} }
+    @keyframes mktwinkle { 0%,100%{ opacity:.25; transform:scale(.7);} 50%{ opacity:1; transform:scale(1.1);} }
+    @keyframes mkblob { 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(30px,-24px) scale(1.12);} }
+    @keyframes mkbob { 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-12px);} }
+    @keyframes mksway { 0%,100%{ transform:rotate(-3deg);} 50%{ transform:rotate(3deg);} }
+    @keyframes mkrise { 0%{ transform:translateY(0) translateX(0); opacity:0;} 12%{opacity:.6;} 80%{opacity:.6;} 100%{ transform:translateY(-80vh) translateX(24px); opacity:0;} }
+    @keyframes mkfade { from{ opacity:0; transform:translateY(24px);} to{ opacity:1; transform:translateY(0);} }
+    @keyframes mkpop { 0%{ transform:scale(.9); opacity:0;} 60%{ transform:scale(1.04);} 100%{ transform:scale(1); opacity:1;} }
+    @keyframes mkveil { 0%,100%{ transform:translate(-3%,-2%) scale(1.06); opacity:.45;} 50%{ transform:translate(3%,3%) scale(1.12); opacity:.75;} }
+    @keyframes mkrise2 { 0%{ transform:translateY(30px) scale(.7); opacity:0;} 14%{ opacity:.55;} 82%{ opacity:.5;} 100%{ transform:translateY(-130px) scale(1); opacity:0;} }
+    @media (prefers-reduced-motion:reduce){ *{ animation:none !important; } }
+    @media (max-width:1280px){ .mk-mascots{ display:none; } }
+    @media (max-width:880px){ .mk-hero-art{ position:static !important; top:auto !important; } }
+    .mklink:hover{ transform:translateY(-3px); box-shadow:0 14px 30px rgba(124,108,166,.16) !important; }
+    .mkbtn:hover{ transform:translateY(-2px); box-shadow:0 16px 34px rgba(145,104,168,.45) !important; }
+  </style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; overflow-x:clip; font-family:'Zen Maru Gothic',sans-serif; color:#4a4450; background:
+  radial-gradient(78% 46% at 50% -8%, #d6c9ee 0%, rgba(214,201,238,0) 60%),
+  radial-gradient(55% 48% at 90% 3%, #cdbce8 0%, rgba(205,188,232,0) 55%),
+  linear-gradient(180deg,#e4ddf4 0%, #ece5f7 28%, #f2ecf9 62%, #f6f2fa 100%);">
+
+  <!-- ============ AMBIENT BACKGROUND ============ -->
+  <div aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; z-index:0; overflow:hidden;">
+    <div style="position:absolute; inset:-15%; background:radial-gradient(40% 40% at 30% 35%, rgba(231,210,233,.55) 0%, rgba(231,210,233,0) 60%), radial-gradient(45% 45% at 72% 60%, rgba(208,200,236,.5) 0%, rgba(208,200,236,0) 60%); animation:mkveil 26s ease-in-out infinite;"></div>
+    <div style="position:absolute; top:-10%; left:-8%; width:38vw; height:38vw; border-radius:50%; background:radial-gradient(circle,rgba(228,206,224,.5) 0%, rgba(228,206,224,0) 70%); filter:blur(10px); animation:mkblob 18s ease-in-out infinite;"></div>
+    <div style="position:absolute; bottom:-14%; right:-10%; width:40vw; height:40vw; border-radius:50%; background:radial-gradient(circle,rgba(206,197,233,.42) 0%, rgba(206,197,233,0) 70%); filter:blur(10px); animation:mkblob 23s ease-in-out infinite reverse;"></div>
+
+    <div style="position:absolute; left:14%; bottom:-2%; width:7px; height:7px; border-radius:50%; background:#e6cede; animation:mkrise2 13s ease-in-out infinite; animation-delay:0s;"></div>
+    <div style="position:absolute; left:26%; bottom:-2%; width:5px; height:5px; border-radius:50%; background:#d8c6ea; animation:mkrise2 16s ease-in-out infinite; animation-delay:2.5s;"></div>
+    <div style="position:absolute; left:46%; bottom:-2%; width:6px; height:6px; border-radius:50%; background:#ecd2dc; animation:mkrise2 15s ease-in-out infinite; animation-delay:5s;"></div>
+    <div style="position:absolute; left:63%; bottom:-2%; width:4px; height:4px; border-radius:50%; background:#d2c4e6; animation:mkrise2 18s ease-in-out infinite; animation-delay:1.5s;"></div>
+    <div style="position:absolute; left:78%; bottom:-2%; width:7px; height:7px; border-radius:50%; background:#e8cfe0; animation:mkrise2 14s ease-in-out infinite; animation-delay:6.5s;"></div>
+    <div style="position:absolute; left:88%; bottom:-2%; width:5px; height:5px; border-radius:50%; background:#d6c8e8; animation:mkrise2 17s ease-in-out infinite; animation-delay:3.5s;"></div>
+    <div style="position:absolute; left:36%; bottom:-2%; width:4px; height:4px; border-radius:50%; background:#eccdda; animation:mkrise2 19s ease-in-out infinite; animation-delay:8s;"></div>
+    <div style="position:absolute; left:55%; bottom:-2%; width:6px; height:6px; border-radius:50%; background:#d4c2e4; animation:mkrise2 15.5s ease-in-out infinite; animation-delay:10s;"></div>
+
+    <!-- moon -->
+    <div style="position:absolute; top:5%; right:9%; width:92px; height:92px; border-radius:50%; background:radial-gradient(circle at 38% 36%, #fbf3e2 0%, #f0ddc6 72%); box-shadow:0 0 30px rgba(244,224,206,.7), 0 0 70px rgba(214,196,236,.5); opacity:.92;"></div>
+    <div style="position:absolute; top:5%; right:9%; width:92px; height:92px; border-radius:50%; box-shadow:inset -20px -9px 0 -4px rgba(222,210,238,.55); opacity:.6;"></div>
+    <!-- constellations (scattered) -->
+    <svg viewBox="0 0 1440 1400" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%; opacity:.7;">
+      <g fill="none" stroke="#a98fce" stroke-width="1.1">
+        <polyline points="110,120 190,180 165,290 270,320 240,430"/>
+        <polyline points="1180,90 1110,180 1190,250 1130,360 1210,430"/>
+        <polyline points="600,70 690,130 660,225 760,250"/>
+        <polyline points="330,560 420,610 400,720 510,740"/>
+        <polyline points="980,600 1060,660 1030,770 1130,800"/>
+        <polyline points="120,820 210,860 180,970 90,1010"/>
+        <polyline points="700,950 790,1000 760,1110 870,1140"/>
+        <polyline points="1180,1000 1100,1070 1190,1140"/>
+      </g>
+      <g fill="#8f72b0">
+        <circle cx="110" cy="120" r="3"/><circle cx="190" cy="180" r="2.2"/><circle cx="165" cy="290" r="3"/><circle cx="270" cy="320" r="2.2"/><circle cx="240" cy="430" r="2.5"/>
+        <circle cx="1180" cy="90" r="3"/><circle cx="1110" cy="180" r="2.2"/><circle cx="1190" cy="250" r="3"/><circle cx="1130" cy="360" r="2.2"/><circle cx="1210" cy="430" r="2.5"/>
+        <circle cx="600" cy="70" r="2.6"/><circle cx="690" cy="130" r="2"/><circle cx="660" cy="225" r="2.6"/><circle cx="760" cy="250" r="2"/>
+        <circle cx="330" cy="560" r="2.6"/><circle cx="420" cy="610" r="2"/><circle cx="400" cy="720" r="2.6"/><circle cx="510" cy="740" r="2"/>
+        <circle cx="980" cy="600" r="2.6"/><circle cx="1060" cy="660" r="2"/><circle cx="1030" cy="770" r="2.6"/><circle cx="1130" cy="800" r="2"/>
+        <circle cx="120" cy="820" r="2.6"/><circle cx="210" cy="860" r="2"/><circle cx="180" cy="970" r="2.6"/><circle cx="90" cy="1010" r="2"/>
+        <circle cx="700" cy="950" r="2.6"/><circle cx="790" cy="1000" r="2"/><circle cx="760" cy="1110" r="2.6"/><circle cx="870" cy="1140" r="2"/>
+        <circle cx="1180" cy="1000" r="2.6"/><circle cx="1100" cy="1070" r="2"/><circle cx="1190" cy="1140" r="2.6"/>
+      </g>
+    </svg>
+    <!-- floating Nuno~ silhouettes -->
+    <img src="assets/nuno_lilac.png" alt="" style="position:absolute; top:14%; left:6%; width:120px; opacity:.16; animation:mkfloat1 17s ease-in-out infinite;">
+    <img src="assets/nuno_pink.png" alt="" style="position:absolute; top:40%; right:5%; width:150px; opacity:.14; animation:mkfloat2 21s ease-in-out infinite;">
+    <img src="assets/nuno_lilac.png" alt="" style="position:absolute; bottom:14%; left:12%; width:96px; opacity:.13; animation:mkfloat2 19s ease-in-out infinite;">
+    <img src="assets/nuno_pink.png" alt="" style="position:absolute; top:70%; right:16%; width:110px; opacity:.12; animation:mkfloat1 23s ease-in-out infinite;">
+    <img src="assets/nuno_lilac.png" alt="" style="position:absolute; top:4%; right:30%; width:80px; opacity:.13; animation:mkfloat1 18s ease-in-out infinite;">
+
+    <div style="position:absolute; top:18%; left:8%; animation:mktwinkle 5s ease-in-out infinite;"><svg width="13" height="13" viewBox="0 0 10 10"><path d="M5 0l1.4 3.6L10 5 6.4 6.4 5 10 3.6 6.4 0 5l3.6-1.4z" fill="#d7c2e0"/></svg></div>
+    <div style="position:absolute; bottom:24%; left:6%; animation:mktwinkle 6.2s ease-in-out infinite;"><svg width="16" height="16" viewBox="0 0 10 10"><path d="M5 0l1.4 3.6L10 5 6.4 6.4 5 10 3.6 6.4 0 5l3.6-1.4z" fill="#e3c6d2"/></svg></div>
+    <div style="position:absolute; top:62%; right:7%; animation:mktwinkle 5.6s ease-in-out infinite;"><svg width="14" height="14" viewBox="0 0 10 10"><path d="M5 0l1.4 3.6L10 5 6.4 6.4 5 10 3.6 6.4 0 5l3.6-1.4z" fill="#cdbfe6"/></svg></div>
+  </div>
+
+  <!-- floating mascots ABOVE content, in side gutters so they never overlap text -->
+  <div aria-hidden="true" class="mk-mascots" style="position:absolute; inset:0; pointer-events:none; z-index:20;">
+    <img src="assets/nuno.png" alt="" style="position:absolute; top:60%; left:calc(50% + 586px); width:58px; opacity:.9; animation:mkfloat2 11s ease-in-out infinite; filter:drop-shadow(0 6px 10px rgba(124,108,166,.22));">
+  </div>
+  <!-- follow-along mascot (sticks to viewport on scroll) -->
+  <div aria-hidden="true" class="mk-mascots" style="position:fixed; top:118px; left:max(16px, calc(50% - 660px)); z-index:25; pointer-events:none; animation:mkfloat1 9s ease-in-out infinite;">
+    <img src="assets/nuno.png" alt="" style="display:block; width:74px; opacity:.95; filter:drop-shadow(0 6px 10px rgba(124,108,166,.22));">
+  </div>
+
+  <!-- ============ HEADER NAV ============ -->
+  <header style="position:sticky; top:0; z-index:30; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); background:rgba(250,247,251,.82); border-bottom:1px solid rgba(186,168,204,.2);">
+    <div style="max-width:1120px; margin:0 auto; padding:13px clamp(16px,4vw,40px); display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div onClick="{{ goTop }}" style="display:flex; align-items:center; gap:11px; cursor:url('assets/cursor.png') 8 6, pointer;">
+        <img src="assets/nuno.png" alt="" style="width:34px; animation:mkbob 4s ease-in-out infinite;">
+        <div style="line-height:1.05;">
+          <div style="font-family:'Hina Mincho',serif; font-size:clamp(19px,2.4vw,23px); letter-spacing:.06em; color:#5b4d6b;">美ヶ原みく</div>
+          <div style="font-family:'Yomogi',cursive; font-size:10.5px; color:#b48fa6; letter-spacing:.16em;">mikahara miku</div>
+        </div>
+      </div>
+      <nav style="display:flex; align-items:center; gap:clamp(6px,2vw,22px); font-family:'Yomogi',cursive; font-size:clamp(13px,1.6vw,15px);">
+        <span onClick="{{ goTop }}" style="{{ tabTop }}">TOP</span>
+        <span onClick="{{ goShop }}" style="{{ tabShop }}">Skeb・BOOTH</span>
+        <span onClick="{{ goContact }}" style="{{ tabContact }}">Contact</span>
+      </nav>
+    </div>
+  </header>
+
+  <main style="position:relative; z-index:10; max-width:1120px; margin:0 auto; padding:clamp(20px,4vw,48px) clamp(16px,4vw,40px) 90px;">
+
+    <!-- ================= TOP PAGE ================= -->
+    <sc-if value="{{ isTop }}" hint-placeholder-val="{{ true }}">
+    <div style="animation:mkfade .6s ease both;">
+
+      <!-- TOP 2-column: left sticky art / right scrolling info -->
+      <div class="mk-top-grid" style="display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,52px); align-items:flex-start; padding:clamp(8px,2vw,24px) 0 0;">
+        <!-- LEFT: sticky illustration -->
+        <div class="mk-hero-art" style="flex:1 1 calc(50% - 26px); min-width:300px; position:sticky; top:96px; align-self:flex-start; display:flex; justify-content:flex-end; overflow:visible;">
+          <div style="position:relative; flex:none; display:flex; justify-content:flex-end;">
+            <img src="assets/profile.png" alt="美ヶ原みく 立ち絵" style="position:relative; display:block; width:min(820px,68vw); filter:drop-shadow(0 22px 30px rgba(91,77,107,.18));">
+          </div>
+        </div>
+
+        <!-- RIGHT: scrolling info -->
+        <div style="flex:1 1 calc(50% - 26px); min-width:300px;">
+          <div style="font-family:'Yomogi',cursive; color:#b98aa0; font-size:12px; letter-spacing:.32em; margin-bottom:14px; text-transform:uppercase;">VTuber</div>
+          <h1 style="font-family:'Hina Mincho',serif; font-size:clamp(34px,5.4vw,58px); line-height:1.18; margin:0 0 26px; color:#4f4360; letter-spacing:.06em; text-wrap:balance;">美ヶ原みく</h1>
+          <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px;">
+            <li style="display:flex; gap:12px; align-items:flex-start; font-size:clamp(14px,1.7vw,16px); line-height:1.85; color:#534b5c;"><span style="flex:none; margin-top:3px; width:18px; height:18px; border-radius:50%; background:#dca6b6; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px;"><svg width="8" height="8" viewBox="0 0 10 10"><path d="M5 0l1.4 3.6L10 5 6.4 6.4 5 10 3.6 6.4 0 5l3.6-1.4z" fill="#fff"/></svg></span>喋りながらゲームするのがだ～いすき！</li>
+            <li style="display:flex; gap:12px; align-items:flex-start; font-size:clamp(14px,1.7vw,16px); line-height:1.85; color:#534b5c;"><span style="flex:none; margin-top:3px; width:18px; height:18px; border-radius:50%; background:#b3a0d4; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px;"><svg width="8" height="8" viewBox="0 0 10 10"><path d="M5 0l1.4 3.6L10 5 6.4 6.4 5 10 3.6 6.4 0 5l3.6-1.4z" fill="#fff"/></svg></span>定期的に決まった時間にゲーム配信するよ！スケジュールみてね～！</li>
+            <li style="display:flex; gap:12px; align-items:flex-start; font-size:clamp(14px,1.7vw,16px); line-height:1.85; color:#534b5c;"><span style="flex:none; margin-top:3px; width:18px; height:18px; border-radius:50%; background:#9c8ab8; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px;"><svg width="8" height="8" viewBox="0 0 10 10"><path d="M5 0l1.4 3.6L10 5 6.4 6.4 5 10 3.6 6.4 0 5l3.6-1.4z" fill="#fff"/></svg></span>ゴアくてグロいゲームとシミュレーター系のゲームがすき！</li>
+          </ul>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; font-family:'Yomogi',cursive; font-size:12.5px;">
+            <span style="padding:5px 13px; border-radius:999px; background:rgba(220,166,182,.2); color:#bc7389; border:1px solid rgba(220,166,182,.4);">#美ヶ原みく</span>
+            <span style="padding:5px 13px; border-radius:999px; background:rgba(179,160,212,.2); color:#8470ab; border:1px solid rgba(179,160,212,.4);">#うつくしのみく絵</span>
+            <span style="padding:5px 13px; border-radius:999px; background:rgba(220,166,182,.2); color:#bc7389; border:1px solid rgba(220,166,182,.4);">#週刊みかはら</span>
+            <span style="padding:5px 13px; border-radius:999px; background:rgba(179,160,212,.2); color:#8470ab; border:1px solid rgba(179,160,212,.4);">#ヌノ～と鳴くいきもの</span>
+          </div>
+
+      <!-- PROFILE -->
+      <section style="margin-top:clamp(34px,5vw,48px);">
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px;">
+          <h2 style="font-family:'Hina Mincho',serif; font-size:clamp(24px,3.4vw,34px); margin:0; color:#4f4360; letter-spacing:.1em;">Profile</h2>
+          <div style="flex:1; height:1px; background:linear-gradient(90deg,rgba(186,168,204,.45),rgba(186,168,204,0));"></div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr; gap:clamp(16px,3vw,28px); align-items:start;">
+          <!-- profile card -->
+          <div style="background:rgba(255,255,255,.92); border:1px solid rgba(186,168,204,.22); border-radius:20px; padding:clamp(22px,3vw,32px); box-shadow:0 10px 30px rgba(124,108,166,.08);">
+            <dl style="margin:0; display:flex; flex-direction:column; gap:0;">
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">誕生日</dt><dd style="margin:0; font-size:14.5px; color:#4f475a;">2月28日</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">デビュー日</dt><dd style="margin:0; font-size:14.5px; color:#4f475a;">2019年12月1日</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">ファンネーム</dt><dd style="margin:0; font-size:14.5px; color:#4f475a;">なし</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">配信ジャンル</dt><dd style="margin:0; font-size:14.5px; color:#4f475a;">ゲーム</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">配信時間帯</dt><dd style="margin:0; font-size:14.5px; color:#4f475a; line-height:1.7;">18時～20時 / 21時～24時 /<br>3時～6時 などなど！</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">よくやるゲーム</dt><dd style="margin:0; font-size:14.5px; color:#4f475a; line-height:1.7;">オープンワールドからシミュレーターゲームまで様々</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">好きなゲーム</dt><dd style="margin:0; font-size:14.5px; color:#4f475a; line-height:1.7;">Fallout4、今まで遊んだゲームほとんどぜんぶ！</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">好きな飲み物</dt><dd style="margin:0; font-size:14.5px; color:#4f475a;">ミルクティー</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">好きなもの</dt><dd style="margin:0; font-size:14.5px; color:#4f475a;">アクセサリー、ぬいぐるみ、読書</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0; border-bottom:1px solid rgba(186,168,204,.18);"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">好きな動物</dt><dd style="margin:0; font-size:14.5px; color:#4f475a;">ねこ、うさぎ、さかな</dd></div>
+              <div style="display:flex; gap:14px; padding:11px 0;"><dt style="flex:none; width:104px; font-family:'Yomogi',cursive; font-size:13px; color:#b07f95;">配信場所</dt><dd style="margin:0; font-size:14.5px; color:#4f475a;">YouTube</dd></div>
+            </dl>
+          </div>
+
+          <!-- mascot card + ghost standee -->
+          <div style="display:flex; flex-direction:column; gap:clamp(16px,3vw,24px);">
+            <div style="background:linear-gradient(155deg,rgba(238,227,245,.85),rgba(247,232,238,.85)); border:1px solid rgba(186,168,204,.22); border-radius:20px; padding:clamp(22px,3vw,30px); display:flex; align-items:center; gap:20px; box-shadow:0 10px 30px rgba(124,108,166,.08);">
+              <img src="assets/nuno.png" alt="ヌノ～" style="width:84px; flex:none; animation:mkfloat2 7s ease-in-out infinite;">
+              <div>
+                <div style="font-family:'Yomogi',cursive; color:#9c7aa8; font-size:12px; letter-spacing:.14em; margin-bottom:4px;">MASCOT</div>
+                <div style="font-family:'Hina Mincho',serif; font-size:24px; color:#574965;">ヌノ～</div>
+                <div style="font-size:12.5px; color:#7a7186; margin-top:6px; line-height:1.7;">ヌノ～と鳴くいきもの。<br>みくのそばにいつもいるよ。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LINKS -->
+      <section style="margin-top:clamp(34px,5vw,60px);">
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px;">
+          <h2 style="font-family:'Hina Mincho',serif; font-size:clamp(24px,3.4vw,34px); margin:0; color:#4f4360; letter-spacing:.1em;">Links</h2>
+          <div style="flex:1; height:1px; background:linear-gradient(90deg,rgba(186,168,204,.45),rgba(186,168,204,0));"></div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px;">
+          <a href="https://x.com/mikahara_miku" target="_blank" rel="noopener" class="mklink" style="display:flex; align-items:center; gap:13px; padding:16px 18px; border-radius:18px; background:rgba(255,255,255,.92); border:1px solid rgba(186,168,204,.22); box-shadow:0 8px 22px rgba(124,108,166,.07); transition:transform .22s,box-shadow .22s;">
+            <span style="flex:none; width:40px; height:40px; border-radius:12px; background:#5b4d6b; display:flex; align-items:center; justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></span>
+            <span><span style="display:block; font-family:'Yomogi',cursive; font-size:15px; color:#574965;">Twitter</span><span style="font-size:11px; color:#9a90a6;">@mikahara_miku</span></span>
+          </a>
+          <a href="https://www.youtube.com/@mikahara_miku" target="_blank" rel="noopener" class="mklink" style="display:flex; align-items:center; gap:13px; padding:16px 18px; border-radius:18px; background:rgba(255,255,255,.92); border:1px solid rgba(186,168,204,.22); box-shadow:0 8px 22px rgba(124,108,166,.07); transition:transform .22s,box-shadow .22s;">
+            <span style="flex:none; width:40px; height:40px; border-radius:12px; background:#d98ca0; display:flex; align-items:center; justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5" width="19" height="14" rx="4" stroke="#fff" stroke-width="2.2"/><path d="M10.5 9.2v5.6l4.5-2.8z" fill="#fff"/></svg></span>
+            <span><span style="display:block; font-family:'Yomogi',cursive; font-size:15px; color:#574965;">YouTube</span><span style="font-size:11px; color:#9a90a6;">@mikahara_miku</span></span>
+          </a>
+          <a href="https://www.twitch.tv/mikawitch_" target="_blank" rel="noopener" class="mklink" style="display:flex; align-items:center; gap:13px; padding:16px 18px; border-radius:18px; background:rgba(255,255,255,.92); border:1px solid rgba(186,168,204,.22); box-shadow:0 8px 22px rgba(124,108,166,.07); transition:transform .22s,box-shadow .22s;">
+            <span style="flex:none; width:40px; height:40px; border-radius:12px; background:#9168c4; display:flex; align-items:center; justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M4 4h16v10l-4 4h-4l-3 3v-3H4z"/><line x1="10" y1="9" x2="10" y2="13"/><line x1="15" y1="9" x2="15" y2="13"/></svg></span>
+            <span><span style="display:block; font-family:'Yomogi',cursive; font-size:15px; color:#574965;">Twitch</span><span style="font-size:11px; color:#9a90a6;">mikawitch_</span></span>
+          </a>
+          <a href="https://lit.link/mikudayo" target="_blank" rel="noopener" class="mklink" style="display:flex; align-items:center; gap:13px; padding:16px 18px; border-radius:18px; background:rgba(255,255,255,.92); border:1px solid rgba(186,168,204,.22); box-shadow:0 8px 22px rgba(124,108,166,.07); transition:transform .22s,box-shadow .22s;">
+            <span style="flex:none; width:40px; height:40px; border-radius:12px; background:#5fb6a8; display:flex; align-items:center; justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M9 15l6-6"/><path d="M11.5 6.5l1.2-1.2a3.8 3.8 0 015.4 5.4l-1.2 1.2"/><path d="M12.5 17.5l-1.2 1.2a3.8 3.8 0 01-5.4-5.4l1.2-1.2"/></svg></span>
+            <span><span style="display:block; font-family:'Yomogi',cursive; font-size:15px; color:#574965;">lit.link</span><span style="font-size:11px; color:#9a90a6;">mikudayo</span></span>
+          </a>
+          <a href="https://note.com/mikahara_miku/n/nad945694c5e5" target="_blank" rel="noopener" class="mklink" style="display:flex; align-items:center; gap:13px; padding:16px 18px; border-radius:18px; background:rgba(255,255,255,.92); border:1px solid rgba(186,168,204,.22); box-shadow:0 8px 22px rgba(124,108,166,.07); transition:transform .22s,box-shadow .22s;">
+            <span style="flex:none; width:40px; height:40px; border-radius:12px; background:#c4a35f; display:flex; align-items:center; justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><rect x="5" y="3.5" width="14" height="17" rx="2.5"/><line x1="8.5" y1="8" x2="15.5" y2="8"/><line x1="8.5" y1="12" x2="15.5" y2="12"/><line x1="8.5" y1="16" x2="12.5" y2="16"/></svg></span>
+            <span><span style="display:block; font-family:'Yomogi',cursive; font-size:15px; color:#574965;">PlayLog</span><span style="font-size:11px; color:#9a90a6;">note.com</span></span>
+          </a>
+        </div>
+      </section>
+        </div><!-- /right -->
+      </div><!-- /mk-top-grid -->
+    </div>
+    </sc-if>
+
+    <!-- ================= SKEB / BOOTH PAGE ================= -->
+    <sc-if value="{{ isShop }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:mkfade .6s ease both;">
+      <!-- SKEB -->
+      <section style="display:flex; flex-wrap:wrap; align-items:center; gap:clamp(20px,4vw,48px); padding:clamp(12px,3vw,32px) 0;">
+        <div style="flex:1 1 280px; min-width:260px; display:flex; justify-content:center; align-items:flex-end; gap:8px; position:relative;">
+          <img src="assets/witch.png" alt="魔女みく" style="width:min(48%,210px); filter:drop-shadow(0 12px 18px rgba(91,77,107,.2)); animation:mkfloat1 8s ease-in-out infinite;">
+          <img src="assets/ghost.png" alt="幽霊みく" style="width:min(48%,210px); filter:drop-shadow(0 12px 18px rgba(91,77,107,.16)); animation:mkfloat2 9.5s ease-in-out infinite;">
+          <div style="position:absolute; top:6%; left:50%; transform:translateX(-50%); animation:mktwinkle 4.5s ease-in-out infinite;"><svg width="22" height="22" viewBox="0 0 10 10"><path d="M5 0l1.4 3.6L10 5 6.4 6.4 5 10 3.6 6.4 0 5l3.6-1.4z" fill="#c4b6e2"/></svg></div>
+        </div>
+        <div style="flex:1 1 320px; min-width:280px;">
+          <div style="font-family:'Yomogi',cursive; color:#c07f96; font-size:13px; letter-spacing:.18em; margin-bottom:8px;">COMMISSION</div>
+          <h2 style="font-family:'Hina Mincho',serif; font-size:clamp(30px,4.6vw,46px); margin:0 0 18px; color:#574965; letter-spacing:.06em;">Skeb</h2>
+          <p style="font-size:clamp(15px,1.9vw,17px); line-height:2; color:#534b5c; margin:0 0 26px;">ゆるいイラストのリクエスト募集してます！</p>
+          <a href="https://skeb.jp/@mikaharamiku" target="_blank" rel="noopener" class="mkbtn" style="display:inline-flex; align-items:center; gap:10px; padding:14px 30px; border-radius:999px; background:linear-gradient(135deg,#d98ca0,#b3a0d4); color:#fff; font-family:'Yomogi',cursive; font-size:15px; box-shadow:0 12px 28px rgba(180,143,200,.4); transition:transform .25s,box-shadow .25s;">Skeb でリクエスト <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="margin-left:1px;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></a>
+        </div>
+      </section>
+
+      <div style="height:1px; margin:clamp(20px,4vw,40px) 0; background:linear-gradient(90deg,rgba(180,143,166,0),rgba(180,143,166,.5),rgba(180,143,166,0));"></div>
+
+      <!-- BOOTH -->
+      <section style="display:flex; flex-wrap:wrap; align-items:center; gap:clamp(20px,4vw,48px); padding:clamp(12px,3vw,24px) 0; flex-direction:row-reverse;">
+        <div style="flex:1 1 260px; min-width:240px; display:flex; justify-content:center; position:relative;">
+          <img src="assets/gas.png" alt="偏在するみく" style="width:min(82%,330px); filter:drop-shadow(0 12px 20px rgba(91,77,107,.18)); animation:mkfloat1 8.5s ease-in-out infinite;">
+        </div>
+        <div style="flex:1 1 320px; min-width:280px;">
+          <div style="font-family:'Yomogi',cursive; color:#c07f96; font-size:13px; letter-spacing:.18em; margin-bottom:8px;">SHOP</div>
+          <h2 style="font-family:'Hina Mincho',serif; font-size:clamp(30px,4.6vw,46px); margin:0 0 6px; color:#574965; letter-spacing:.06em;">BOOTH</h2>
+          <div style="font-family:'Yomogi',cursive; font-size:15px; color:#9168a8; margin-bottom:18px;">偏在するみく売り場</div>
+          <p style="font-size:clamp(14.5px,1.8vw,16px); line-height:2; color:#534b5c; margin:0 0 6px;">にんげんの生活に寄り添うみくがいます。<br>おうちにひとりどうですか？</p>
+          <p style="font-size:13px; color:#8a8096; margin:0 0 26px;">※ たまにちがうのも混じります</p>
+          <a href="https://mikaharamiku.booth.pm/" target="_blank" rel="noopener" class="mkbtn" style="display:inline-flex; align-items:center; gap:10px; padding:14px 30px; border-radius:999px; background:linear-gradient(135deg,#b3a0d4,#d98ca0); color:#fff; font-family:'Yomogi',cursive; font-size:15px; box-shadow:0 12px 28px rgba(180,143,200,.4); transition:transform .25s,box-shadow .25s;">BOOTH をのぞく <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="margin-left:1px;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></a>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ================= CONTACT PAGE ================= -->
+    <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:mkfade .6s ease both; min-height:54vh; display:flex; align-items:center; justify-content:center; padding:clamp(20px,5vw,60px) 0;">
+      <div style="text-align:center; max-width:520px;">
+        <img src="assets/yuru.png" alt="みく" style="width:min(60%,260px); margin-bottom:8px; filter:drop-shadow(0 14px 22px rgba(91,77,107,.16)); animation:mkfloat1 8s ease-in-out infinite;">
+        <div style="font-family:'Yomogi',cursive; color:#c07f96; font-size:13px; letter-spacing:.2em; margin-bottom:8px;">GET IN TOUCH</div>
+        <h2 style="font-family:'Hina Mincho',serif; font-size:clamp(32px,5vw,50px); margin:0 0 22px; color:#574965; letter-spacing:.08em;">Contact</h2>
+        <p style="font-size:clamp(15px,2vw,17px); line-height:2; color:#534b5c; margin:0 0 32px;">コラボやお仕事のお誘いは<br>Twitter の DM までお願いします。</p>
+        <a href="https://x.com/mikahara_miku" target="_blank" rel="noopener" class="mkbtn" style="display:inline-flex; align-items:center; gap:11px; padding:15px 34px; border-radius:999px; background:linear-gradient(135deg,#5b4d6b,#9168a8); color:#fff; font-family:'Yomogi',cursive; font-size:15px; box-shadow:0 12px 30px rgba(91,77,107,.4); transition:transform .25s,box-shadow .25s;"><span style="display:inline-flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></span> Twitter DM を送る <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="margin-left:1px;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></a>
+      </div>
+    </div>
+    </sc-if>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="position:relative; z-index:10; text-align:center; padding:30px 16px 40px; border-top:1px solid rgba(180,160,200,.25);">
+    <img src="assets/nuno.png" alt="" style="width:34px; margin-bottom:8px; animation:mkbob 5s ease-in-out infinite;">
+    <div style="font-family:'Hina Mincho',serif; font-size:15px; color:#7a6e88; letter-spacing:.1em;">美ヶ原みく</div>
+    <div style="font-family:'Yomogi',cursive; font-size:11px; color:#a99cb6; margin-top:5px; letter-spacing:.1em;">© mikahara miku</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 'top' };
+  tab(p) {
+    const active = this.state.page === p;
+    return [
+      'cursor:pointer',
+      'padding:6px 4px',
+      'transition:color .2s',
+      'color:' + (active ? '#bc7389' : '#7a6e88'),
+      'border-bottom:2px solid ' + (active ? '#dca6b6' : 'transparent'),
+    ].join(';');
+  }
+  componentDidMount() {
+    import('https://esm.sh/budoux@0.6.2').then((m) => {
+      this._parser = m.loadDefaultJapaneseParser();
+      this._applyBudoux();
+    }).catch(() => {});
+  }
+  componentDidUpdate() { this._applyBudoux(); }
+  _applyBudoux() {
+    if (!this._parser || typeof document === 'undefined') return;
+    requestAnimationFrame(() => {
+      document.querySelectorAll('main h1, main h2, main p, main li, main dd').forEach((el) => {
+        if (el.dataset.budoux === '1') return;
+        try { this._parser.applyElement(el); el.dataset.budoux = '1'; } catch (e) {}
+      });
+    });
+  }
+  go(p) {
+    return () => {
+      this.setState({ page: p });
+      if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+  renderVals() {
+    return {
+      isTop: this.state.page === 'top',
+      isShop: this.state.page === 'shop',
+      isContact: this.state.page === 'contact',
+      goTop: this.go('top'),
+      goShop: this.go('shop'),
+      goContact: this.go('contact'),
+      tabTop: this.tab('top'),
+      tabShop: this.tab('shop'),
+      tabContact: this.tab('contact'),
+    };
+  }
+}
+</script>
+</body>
+</html>
