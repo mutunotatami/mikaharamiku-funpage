@@ -29,6 +29,7 @@
     p, li, dd, h1, h2, h3 { word-break:auto-phrase; line-break:strict; }
     a { text-decoration:none; color:inherit; }
     ::selection { background:#e3c0cc; }
+    img { -webkit-user-drag:none; -khtml-user-drag:none; -moz-user-drag:none; -o-user-drag:none; user-drag:none; -webkit-touch-callout:none; user-select:none; -webkit-user-select:none; pointer-events:none; }
     @keyframes mkfloat1 { 0%,100%{ transform:translateY(0) rotate(-4deg);} 50%{ transform:translateY(-26px) rotate(4deg);} }
     @keyframes mkfloat2 { 0%,100%{ transform:translateY(0) rotate(5deg);} 50%{ transform:translateY(-32px) rotate(-3deg);} }
     @keyframes mkdrift { 0%{ transform:translate(0,0) rotate(0);} 100%{ transform:translate(60px,-40px) rotate(20deg);} }
@@ -36,6 +37,8 @@
     @keyframes mkblob { 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(30px,-24px) scale(1.12);} }
     @keyframes mkbob { 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-12px);} }
     @keyframes mksway { 0%,100%{ transform:rotate(-3deg);} 50%{ transform:rotate(3deg);} }
+    @keyframes mkswayA { 0%,100%{ transform:rotate(-7deg) translateY(0);} 50%{ transform:rotate(6deg) translateY(-4px);} }
+    @keyframes mkswayB { 0%,100%{ transform:rotate(8deg) translateY(-3px);} 50%{ transform:rotate(-5deg) translateY(0);} }
     @keyframes mkrise { 0%{ transform:translateY(0) translateX(0); opacity:0;} 12%{opacity:.6;} 80%{opacity:.6;} 100%{ transform:translateY(-80vh) translateX(24px); opacity:0;} }
     @keyframes mkfade { from{ opacity:0; transform:translateY(24px);} to{ opacity:1; transform:translateY(0);} }
     @keyframes mkpop { 0%{ transform:scale(.9); opacity:0;} 60%{ transform:scale(1.04);} 100%{ transform:scale(1); opacity:1;} }
@@ -301,9 +304,18 @@
 
   <!-- ============ FOOTER ============ -->
   <footer style="position:relative; z-index:10; text-align:center; padding:30px 16px 40px; border-top:1px solid rgba(180,160,200,.25);">
-    <img src="assets/nuno.png" alt="" style="width:34px; margin-bottom:8px; animation:mkbob 5s ease-in-out infinite;">
-    <div style="font-family:'Hina Mincho',serif; font-size:15px; color:#7a6e88; letter-spacing:.1em;">美ヶ原みく</div>
-    <div style="font-family:'Yomogi',cursive; font-size:11px; color:#a99cb6; margin-top:5px; letter-spacing:.1em;">© mikahara miku</div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:clamp(16px,4vw,34px);">
+      <div style="flex:none; animation:mkswayA 3.4s ease-in-out infinite; transform-origin:50% 90%;">
+        <img src="assets/pixel_witch.png" alt="" style="display:block; width:clamp(48px,8vw,64px); image-rendering:pixelated;">
+      </div>
+      <div>
+        <div style="font-family:'Hina Mincho',serif; font-size:15px; color:#7a6e88; letter-spacing:.1em;">美ヶ原みく</div>
+        <div style="font-family:'Yomogi',cursive; font-size:11px; color:#a99cb6; margin-top:5px; letter-spacing:.1em;">© mikahara miku</div>
+      </div>
+      <div style="flex:none; animation:mkswayB 4.1s ease-in-out infinite; transform-origin:50% 90%;">
+        <img src="assets/pixel_ghost.png" alt="" style="display:block; width:clamp(48px,8vw,64px); image-rendering:pixelated;">
+      </div>
+    </div>
   </footer>
 </div>
 </x-dc>
@@ -325,6 +337,18 @@ class Component extends DCLogic {
       this._parser = m.loadDefaultJapaneseParser();
       this._applyBudoux();
     }).catch(() => {});
+    // discourage image saving (deterrent only — cannot fully prevent)
+    if (typeof document !== 'undefined') {
+      this._blockImg = (e) => { if (e.target && e.target.tagName === 'IMG') e.preventDefault(); };
+      document.addEventListener('contextmenu', this._blockImg);
+      document.addEventListener('dragstart', this._blockImg);
+    }
+  }
+  componentWillUnmount() {
+    if (typeof document !== 'undefined' && this._blockImg) {
+      document.removeEventListener('contextmenu', this._blockImg);
+      document.removeEventListener('dragstart', this._blockImg);
+    }
   }
   componentDidUpdate() { this._applyBudoux(); }
   _applyBudoux() {
